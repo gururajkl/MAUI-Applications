@@ -1,0 +1,42 @@
+﻿<?xml version = "1.0" encoding = "UTF-8" ?>
+<Application xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:StylesInMAUI"
+             x:Class="StylesInMAUI.App">
+    <Application.Resources>
+        <Color x:Key="backgroundColor">#323031</Color>
+        <Color x:Key="textColor">#ffc857</Color>
+
+        <Style TargetType="StackBase"
+               ApplyToDerivedTypes="True">
+            <Setter Property="Spacing"
+                    Value="25" />
+            <Setter Property="Padding"
+                    Value="30, 0" />
+            <Setter Property="VerticalOptions"
+                    Value="Center" />
+        </Style>
+
+        <Style TargetType="Button" x:Key="baseBtn">
+            <Setter Property="BackgroundColor"
+                    Value="{StaticResource backgroundColor}" />
+            <Setter Property="FontAttributes"
+                    Value="Bold" />
+            <Setter Property="FontSize"
+                    Value="Large" />
+        </Style>
+
+        <Style TargetType="Button"
+               x:Key="btnStyle"
+               BasedOn="{StaticResource baseBtn}">
+            <Setter Property="TextColor"
+                    Value="{StaticResource textColor}" />
+        </Style>
+
+        <Style TargetType="Button"
+               BasedOn="{StaticResource baseBtn}">
+            <Setter Property="TextColor"
+                    Value="Black"/>
+        </Style>
+    </Application.Resources>
+</Application>
