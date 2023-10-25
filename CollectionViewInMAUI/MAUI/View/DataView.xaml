@@ -24,7 +24,21 @@
             <CollectionView ItemsSource="{Binding Products}"
                             ItemTemplate="{StaticResource Key=ProductTemplates}"
                             RemainingItemsThreshold="1"
-                            RemainingItemsThresholdReachedCommand="{Binding ThresholdReachedCommand}" />
+                            RemainingItemsThresholdReachedCommand="{Binding ThresholdReachedCommand}">
+                <CollectionView.EmptyView>
+                    <Grid>
+                        <VerticalStackLayout VerticalOptions="Center">
+                            <Image Source="notfound.png"
+                                   HeightRequest="150"
+                                   VerticalOptions="Center" />
+                            <Label FontAttributes="Bold"
+                                   FontSize="Large"
+                                   HorizontalTextAlignment="Center"
+                                   Text="No results" />
+                        </VerticalStackLayout>
+                    </Grid>
+                </CollectionView.EmptyView>
+            </CollectionView>
         </VerticalStackLayout>
     </RefreshView>
 </ContentPage>
