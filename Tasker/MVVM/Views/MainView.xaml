@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="Tasker.MVVM.Views.MainView"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:vm="clr-namespace:Tasker.MVVM.ViewModels"
+    Title="MainView">
+    <ContentPage.BindingContext>
+        <vm:MainViewModel />
+    </ContentPage.BindingContext>
+
+    <Grid Margin="15" RowDefinitions=".1*, .3*, .7*">
+        <Label StyleClass="DarkBlue, Header" Text="My Tasks" />
+        <Grid Grid.Row="1" BackgroundColor="DarkRed" />
+        <Grid Grid.Row="2" BackgroundColor="DarkGoldenrod" />
+    </Grid>
+</ContentPage>
