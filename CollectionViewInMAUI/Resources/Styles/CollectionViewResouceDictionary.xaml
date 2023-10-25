@@ -41,7 +41,8 @@
 
     <DataTemplate x:Key="OfferStyle">
         <Grid ColumnDefinitions=".3*, .7*"
-              RowDefinitions="*, *"
+              RowDefinitions="*"
+              HeightRequest="200"
               Margin="15, 10, 15, 0">
             <Frame Grid.ColumnSpan="2"
                    Grid.RowSpan="2"
@@ -49,28 +50,44 @@
                 <Frame.Background>
                     <LinearGradientBrush EndPoint="1, 0">
                         <GradientStop Offset="0"
-                                      Color="#F8F9FA" />
+                                      Color="#FFBF47" />
                         <GradientStop Offset="1"
-                                      Color="#DEE2E6" />
+                                      Color="#EEB54C" />
                     </LinearGradientBrush>
                 </Frame.Background>
             </Frame>
 
             <Image HeightRequest="100"
                    Grid.RowSpan="2"
-                   Grid.ColumnSpan="2"
                    Source="{Binding Image}" />
 
-            <Label Text="{Binding Name}"
-                   FontSize="Large"
-                   VerticalOptions="Center"
-                   Grid.Column="2" />
+            <VerticalStackLayout VerticalOptions="Center"
+                                 Grid.Column="2">
 
-            <Label Text="{Binding Price, StringFormat='{0:C}'}"
-                   Grid.Row="1"
-                   FontSize="Large"
-                   VerticalOptions="Center"
-                   Grid.Column="2" />
+                <Label Text="{Binding Name, StringFormat='OFFER: {0}'}"
+                       FontSize="Title"
+                       FontAttributes="Bold"
+                       TextColor="White"
+                       VerticalOptions="Center"
+                       Grid.Column="2" />
+
+                <Label Text="{Binding Price, StringFormat='{0:C}'}"
+                       Grid.Row="1"
+                       VerticalOptions="Center"
+                       FontSize="Title"
+                       FontAttributes="Bold"
+                       TextColor="White"
+                       Grid.Column="2">
+                    <Label.FormattedText>
+                        <FormattedString>
+                            <Span Text="{Binding OfferPrice, StringFormat='{0:C}'}" />
+                            <Span Text="{Binding Price, StringFormat='{0:C}'}"
+                                  TextDecorations="Strikethrough"
+                                  TextColor="DarkRed" />
+                        </FormattedString>
+                    </Label.FormattedText>
+                </Label>
+            </VerticalStackLayout>
         </Grid>
     </DataTemplate>
 </ResourceDictionary>

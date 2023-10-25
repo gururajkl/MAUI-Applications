@@ -1,13 +1,29 @@
 ﻿using CollectionViewInMAUI.MAUI.Model;
+using PropertyChanged;
 using System.Collections.ObjectModel;
+using System.Windows.Input;
 
 namespace CollectionViewInMAUI.MAUI.ViewModel
 {
+    [AddINotifyPropertyChangedInterface]
     public class DataViewModel
     {
         public ObservableCollection<Product> Products { get; set; }
+        public bool IsRefreshing { get; set; }
+        public ICommand RefreshCommand => new Command(async () =>
+        {
+            IsRefreshing = true;
+            await Task.Delay(3000);
+            RefreshView();
+            IsRefreshing = false;
+        });
 
         public DataViewModel()
+        {
+            RefreshView();
+        }
+
+        public void RefreshView()
         {
             Products = new ObservableCollection<Product>
             {
