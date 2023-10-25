@@ -1,15 +1,34 @@
 ﻿using CollectionViewInMAUI.MAUI.Model;
-using PropertyChanged;
 using System.Collections.ObjectModel;
+using System.ComponentModel;
 using System.Windows.Input;
 
 namespace CollectionViewInMAUI.MAUI.ViewModel
 {
-    [AddINotifyPropertyChangedInterface]
-    public class DataViewModel
+    public class DataViewModel : INotifyPropertyChanged
     {
-        public ObservableCollection<Product> Products { get; set; }
-        public bool IsRefreshing { get; set; }
+        private ObservableCollection<Product> products;
+        public ObservableCollection<Product> Products
+        {
+            get { return products; }
+            set
+            {
+                products = value;
+                OnPropertyChanged(nameof(Products));
+            }
+        }
+
+        private bool isRefreshing;
+        public bool IsRefreshing
+        {
+            get => isRefreshing;
+            set
+            {
+                isRefreshing = value;
+                OnPropertyChanged(nameof(IsRefreshing));
+            }
+        }
+
         public ICommand RefreshCommand => new Command(async () =>
         {
             IsRefreshing = true;
@@ -438,6 +457,12 @@ namespace CollectionViewInMAUI.MAUI.ViewModel
                          Stock = 9
                      },
                };
+        }
+
+        public event PropertyChangedEventHandler PropertyChanged;
+        public void OnPropertyChanged(string propertyName)
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
     }
 }
