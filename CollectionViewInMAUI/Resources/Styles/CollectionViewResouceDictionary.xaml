@@ -1,0 +1,76 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<?xaml-comp compile="true" ?>
+<ResourceDictionary xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
+
+    <DataTemplate x:Key="ProductStyle">
+        <Grid ColumnDefinitions=".1*, .2*, .7*"
+              RowDefinitions="*, *"
+              Margin="15, 10, 15, 0">
+            <Frame Grid.Column="1"
+                   Grid.ColumnSpan="2"
+                   Grid.RowSpan="2"
+                   BorderColor="White">
+                <Frame.Background>
+                    <LinearGradientBrush EndPoint="1, 0">
+                        <GradientStop Offset="0"
+                                      Color="#F8F9FA" />
+                        <GradientStop Offset="1"
+                                      Color="#DEE2E6" />
+                    </LinearGradientBrush>
+                </Frame.Background>
+            </Frame>
+
+            <Image HeightRequest="100"
+                   Grid.RowSpan="2"
+                   Grid.ColumnSpan="2"
+                   Source="{Binding Image}" />
+
+            <Label Text="{Binding Name}"
+                   FontSize="Large"
+                   VerticalOptions="Center"
+                   Grid.Column="2" />
+
+            <Label Text="{Binding Price, StringFormat='{0:C}'}"
+                   Grid.Row="1"
+                   FontSize="Large"
+                   VerticalOptions="Center"
+                   Grid.Column="2" />
+        </Grid>
+    </DataTemplate>
+
+    <DataTemplate x:Key="OfferStyle">
+        <Grid ColumnDefinitions=".3*, .7*"
+              RowDefinitions="*, *"
+              Margin="15, 10, 15, 0">
+            <Frame Grid.ColumnSpan="2"
+                   Grid.RowSpan="2"
+                   BorderColor="White">
+                <Frame.Background>
+                    <LinearGradientBrush EndPoint="1, 0">
+                        <GradientStop Offset="0"
+                                      Color="#F8F9FA" />
+                        <GradientStop Offset="1"
+                                      Color="#DEE2E6" />
+                    </LinearGradientBrush>
+                </Frame.Background>
+            </Frame>
+
+            <Image HeightRequest="100"
+                   Grid.RowSpan="2"
+                   Grid.ColumnSpan="2"
+                   Source="{Binding Image}" />
+
+            <Label Text="{Binding Name}"
+                   FontSize="Large"
+                   VerticalOptions="Center"
+                   Grid.Column="2" />
+
+            <Label Text="{Binding Price, StringFormat='{0:C}'}"
+                   Grid.Row="1"
+                   FontSize="Large"
+                   VerticalOptions="Center"
+                   Grid.Column="2" />
+        </Grid>
+    </DataTemplate>
+</ResourceDictionary>

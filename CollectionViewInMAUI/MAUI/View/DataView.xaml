@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="CollectionViewInMAUI.MAUI.View.DataView"
+             xmlns:vm="clr-namespace:CollectionViewInMAUI.MAUI.ViewModel"
+             xmlns:dataTemplateSelector="clr-namespace:CollectionViewInMAUI.Selector"
+             Title="DataView">
+
+    <ContentPage.Resources>
+        <dataTemplateSelector:ProductDataTemplateSelector x:Key="ProductTemplates" />
+    </ContentPage.Resources>
+
+    <ContentPage.BindingContext>
+        <vm:DataViewModel />
+    </ContentPage.BindingContext>
+
+    <CollectionView ItemsSource="{Binding Products}"
+                    ItemTemplate="{StaticResource Key=ProductTemplates}" />
+</ContentPage>
