@@ -4,6 +4,7 @@
              x:Class="CollectionViewInMAUI.MAUI.View.DataView"
              xmlns:vm="clr-namespace:CollectionViewInMAUI.MAUI.ViewModel"
              xmlns:dataTemplateSelector="clr-namespace:CollectionViewInMAUI.Selector"
+             Padding="0, 5, 0, 10"
              Title="DataView">
 
     <ContentPage.Resources>
@@ -17,6 +18,8 @@
     <RefreshView Command="{Binding RefreshCommand}"
                  IsRefreshing="{Binding IsRefreshing}">
         <CollectionView ItemsSource="{Binding Products}"
-                        ItemTemplate="{StaticResource Key=ProductTemplates}" />
+                        ItemTemplate="{StaticResource Key=ProductTemplates}"
+                        RemainingItemsThreshold="1"
+                        RemainingItemsThresholdReachedCommand="{Binding ThresholdReachedCommand}"/>
     </RefreshView>
 </ContentPage>

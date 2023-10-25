@@ -4,13 +4,14 @@
                     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
 
     <DataTemplate x:Key="ProductStyle">
-        <Grid ColumnDefinitions=".1*, .2*, .7*"
-              RowDefinitions="*, *"
+        <Grid ColumnDefinitions=".3*, .7*"
+              RowDefinitions="*"
+              HeightRequest="150"
               Margin="15, 10, 15, 0">
-            <Frame Grid.Column="1"
-                   Grid.ColumnSpan="2"
+
+            <Frame Grid.ColumnSpan="2"
                    Grid.RowSpan="2"
-                   BorderColor="White">
+                   BorderColor="{AppThemeBinding Dark={StaticResource Black}, Light={StaticResource White}}">
                 <Frame.Background>
                     <LinearGradientBrush EndPoint="1, 0">
                         <GradientStop Offset="0"
@@ -23,19 +24,23 @@
 
             <Image HeightRequest="100"
                    Grid.RowSpan="2"
-                   Grid.ColumnSpan="2"
                    Source="{Binding Image}" />
+            <VerticalStackLayout VerticalOptions="Center"
+                                 Grid.Column="2">
 
-            <Label Text="{Binding Name}"
-                   FontSize="Large"
-                   VerticalOptions="Center"
-                   Grid.Column="2" />
+                <Label Text="{Binding Name}"
+                       FontSize="Title"
+                       FontAttributes="Bold"
+                       TextColor="{AppThemeBinding Dark={StaticResource Black}, Light={StaticResource Black}}"
+                       VerticalOptions="Center"
+                       Grid.Column="2" />
 
-            <Label Text="{Binding Price, StringFormat='{0:C}'}"
-                   Grid.Row="1"
-                   FontSize="Large"
-                   VerticalOptions="Center"
-                   Grid.Column="2" />
+                <Label Text="{Binding Price, StringFormat='{0:C}'}"
+                       Grid.Row="1"
+                       TextColor="{AppThemeBinding Dark={StaticResource Black}, Light={StaticResource Black}}"
+                       FontSize="Large"
+                       VerticalOptions="Center" />
+            </VerticalStackLayout>
         </Grid>
     </DataTemplate>
 
@@ -44,15 +49,16 @@
               RowDefinitions="*"
               HeightRequest="200"
               Margin="15, 10, 15, 0">
+
             <Frame Grid.ColumnSpan="2"
                    Grid.RowSpan="2"
-                   BorderColor="White">
+                   BorderColor="{AppThemeBinding Dark={StaticResource Black}, Light={StaticResource White}}">
                 <Frame.Background>
                     <LinearGradientBrush EndPoint="1, 0">
                         <GradientStop Offset="0"
-                                      Color="#FFBF47" />
+                                      Color="#52b963" />
                         <GradientStop Offset="1"
-                                      Color="#EEB54C" />
+                                      Color="#4fc172" />
                     </LinearGradientBrush>
                 </Frame.Background>
             </Frame>
@@ -80,10 +86,10 @@
                        Grid.Column="2">
                     <Label.FormattedText>
                         <FormattedString>
-                            <Span Text="{Binding OfferPrice, StringFormat='{0:C}'}" />
+                            <Span Text="{Binding OfferPrice, StringFormat='{0:C} '}" />
                             <Span Text="{Binding Price, StringFormat='{0:C}'}"
                                   TextDecorations="Strikethrough"
-                                  TextColor="DarkRed" />
+                                  TextColor="#ed1c16" />
                         </FormattedString>
                     </Label.FormattedText>
                 </Label>

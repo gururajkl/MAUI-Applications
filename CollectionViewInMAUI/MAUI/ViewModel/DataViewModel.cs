@@ -1,13 +1,16 @@
 ﻿using CollectionViewInMAUI.MAUI.Model;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
+using System.Runtime.CompilerServices;
 using System.Windows.Input;
 
 namespace CollectionViewInMAUI.MAUI.ViewModel
 {
     public class DataViewModel : INotifyPropertyChanged
     {
-        private ObservableCollection<Product> products;
+        int msForTaskDelay = 3000;
+
+        private ObservableCollection<Product> products = new ObservableCollection<Product>();
         public ObservableCollection<Product> Products
         {
             get { return products; }
@@ -32,9 +35,14 @@ namespace CollectionViewInMAUI.MAUI.ViewModel
         public ICommand RefreshCommand => new Command(async () =>
         {
             IsRefreshing = true;
-            await Task.Delay(3000);
+            await Task.Delay(msForTaskDelay);
             RefreshView();
             IsRefreshing = false;
+        });
+
+        public ICommand ThresholdReachedCommand => new Command(() =>
+        {
+            RefreshView(Products.Count);
         });
 
         public DataViewModel()
@@ -42,9 +50,9 @@ namespace CollectionViewInMAUI.MAUI.ViewModel
             RefreshView();
         }
 
-        public void RefreshView()
+        public void RefreshView(int lastIndex = 0)
         {
-            Products = new ObservableCollection<Product>
+            var items = new ObservableCollection<Product>
             {
                     new Product
                     {
@@ -457,6 +465,13 @@ namespace CollectionViewInMAUI.MAUI.ViewModel
                          Stock = 9
                      },
                };
+            int numberOfItemsPerPage = 10;
+            var pageItems = items.Skip(lastIndex).Take(numberOfItemsPerPage);
+
+            foreach (var item in pageItems)
+            {
+                Products.Add(item);
+            }
         }
 
         public event PropertyChangedEventHandler PropertyChanged;
