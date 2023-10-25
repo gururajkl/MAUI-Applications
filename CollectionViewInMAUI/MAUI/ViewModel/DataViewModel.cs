@@ -32,6 +32,22 @@ namespace CollectionViewInMAUI.MAUI.ViewModel
             }
         }
 
+        private Product selectedProduct;
+        public Product SelectedProduct
+        {
+            get => selectedProduct;
+            set
+            {
+                selectedProduct = value;
+                OnPropertyChanged(nameof(SelectedProduct));
+            }
+        }
+
+        public ICommand SelectionChangedCommand => new Command(() =>
+        {
+            var selectedProduct = SelectedProduct;
+        });
+
         public ICommand RefreshCommand => new Command(async () =>
         {
             IsRefreshing = true;
@@ -43,6 +59,11 @@ namespace CollectionViewInMAUI.MAUI.ViewModel
         public ICommand ThresholdReachedCommand => new Command(() =>
         {
             RefreshView(Products.Count);
+        });
+
+        public ICommand DeleteCommand => new Command((product) =>
+        {
+            Products.Remove((Product)product);
         });
 
         public DataViewModel()

@@ -6,4 +6,9 @@ public partial class DataView : ContentPage
     {
         InitializeComponent();
     }
+
+    private void GotToNavPage(object sender, EventArgs e)
+    {
+        Navigation.PushAsync(new LayoutPage());
+    }
 }

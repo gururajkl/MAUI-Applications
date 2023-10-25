@@ -17,9 +17,14 @@
 
     <RefreshView Command="{Binding RefreshCommand}"
                  IsRefreshing="{Binding IsRefreshing}">
-        <CollectionView ItemsSource="{Binding Products}"
-                        ItemTemplate="{StaticResource Key=ProductTemplates}"
-                        RemainingItemsThreshold="1"
-                        RemainingItemsThresholdReachedCommand="{Binding ThresholdReachedCommand}"/>
+        <VerticalStackLayout>
+            <Button Text="Go to Layout Page"
+                    Margin="10"
+                    Clicked="GotToNavPage" />
+            <CollectionView ItemsSource="{Binding Products}"
+                            ItemTemplate="{StaticResource Key=ProductTemplates}"
+                            RemainingItemsThreshold="1"
+                            RemainingItemsThresholdReachedCommand="{Binding ThresholdReachedCommand}" />
+        </VerticalStackLayout>
     </RefreshView>
 </ContentPage>

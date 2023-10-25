@@ -8,7 +8,7 @@ namespace CollectionViewInMAUI
         {
             InitializeComponent();
 
-            MainPage = new DataView();
+            MainPage = new NavigationPage(new DataView());
         }
     }
 }
