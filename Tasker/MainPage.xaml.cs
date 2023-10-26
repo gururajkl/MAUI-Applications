@@ -7,6 +7,7 @@
         public MainPage()
         {
             InitializeComponent();
+            Application.Current.UserAppTheme = AppTheme.Light;
         }
 
         private void OnCounterClicked(object sender, EventArgs e)

@@ -32,8 +32,8 @@
                                HorizontalOptions="CenterAndExpand"
                                Spacing="15"
                                VerticalOptions="Center">
-            <Button CornerRadius="15" Text="Add Task" />
-            <Button CornerRadius="15" Text="Add Category" />
+            <Button CornerRadius="15" Text="Add Task" Clicked="AddTaskClicked" />
+            <Button CornerRadius="15" Text="Add Category" Clicked="AddCategoryClicked" />
         </HorizontalStackLayout>
     </Grid>
 </ContentPage>

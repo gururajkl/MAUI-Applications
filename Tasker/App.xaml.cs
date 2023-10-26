@@ -9,6 +9,7 @@ namespace Tasker
             InitializeComponent();
 
             MainPage = new NavigationPage(new MainView());
+            Application.Current.UserAppTheme = AppTheme.Light;
         }
     }
 }
