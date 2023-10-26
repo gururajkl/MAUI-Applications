@@ -17,4 +17,14 @@
         <Setter Property="FontAttributes" Value="Bold" />
         <Setter Property="FontSize" Value="Title" />
     </Style>
+
+    <Style Class="SubHeader" TargetType="Label">
+        <Setter Property="VerticalOptions" Value="Center" />
+        <Setter Property="FontSize" Value="Medium" />
+    </Style>
+
+    <Style Class="CardTitle" TargetType="Label">
+        <Setter Property="FontAttributes" Value="Bold" />
+        <Setter Property="FontSize" Value="Medium" />
+    </Style>
 </ResourceDictionary>
