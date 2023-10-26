@@ -1,9 +1,33 @@
+using Tasker.MVVM.ViewModels;
+
 namespace Tasker.MVVM.Views;
 
 public partial class MainView : ContentPage
 {
-	public MainView()
-	{
-		InitializeComponent();
-	}
+    private MainViewModel mainViewModel = new MainViewModel();
+
+    public MainView()
+    {
+        InitializeComponent();
+        BindingContext = mainViewModel;
+    }
+
+    private void checkBox_CheckedChanged(object sender, CheckedChangedEventArgs e)
+    {
+        mainViewModel.UpdateData();
+    }
+
+    private void Button_Clicked(object sender, EventArgs e)
+    {
+        var newTaskView = new NewTaskView
+        {
+            BindingContext = new NewTaskViewModel
+            {
+                Categories = mainViewModel.Categories,
+                Tasks = mainViewModel.Tasks,
+            }
+        };
+
+        Navigation.PushAsync(newTaskView);
+    }
 }

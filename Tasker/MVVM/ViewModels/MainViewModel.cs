@@ -1,8 +1,10 @@
-﻿using System.Collections.ObjectModel;
+﻿using PropertyChanged;
+using System.Collections.ObjectModel;
 using Tasker.MVVM.Models;
 
 namespace Tasker.MVVM.ViewModels
 {
+    [AddINotifyPropertyChangedInterface]
     public class MainViewModel
     {
         public ObservableCollection<Category> Categories { get; set; }
@@ -93,11 +95,11 @@ namespace Tasker.MVVM.ViewModels
                             where task.CategoryId == category.Id
                             select task;
 
-                var completedTasks = from task in Tasks
+                var completedTasks = from task in tasks
                                      where task.Completed == true
                                      select task;
 
-                var notCompletedTasks = from task in Tasks
+                var notCompletedTasks = from task in tasks
                                         where task.Completed == false
                                         select task;
 
