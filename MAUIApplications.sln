@@ -9,7 +9,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Calculator", "Calculator\Ca
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CollectionViewInMAUI", "CollectionViewInMAUI\CollectionViewInMAUI.csproj", "{52B7D7CE-4787-4770-BCEA-BEF962666907}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tasker", "Tasker\Tasker.csproj", "{564038F9-A2AE-4829-B78D-941CEC3E3E12}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Tasker", "Tasker\Tasker.csproj", "{564038F9-A2AE-4829-B78D-941CEC3E3E12}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RESTInMAUI", "RESTInMAUI\RESTInMAUI.csproj", "{3045AB18-A9FA-46AE-BB29-0BFB5CD94B1F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -41,6 +43,12 @@ Global
 		{564038F9-A2AE-4829-B78D-941CEC3E3E12}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{564038F9-A2AE-4829-B78D-941CEC3E3E12}.Release|Any CPU.Build.0 = Release|Any CPU
 		{564038F9-A2AE-4829-B78D-941CEC3E3E12}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{3045AB18-A9FA-46AE-BB29-0BFB5CD94B1F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3045AB18-A9FA-46AE-BB29-0BFB5CD94B1F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3045AB18-A9FA-46AE-BB29-0BFB5CD94B1F}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{3045AB18-A9FA-46AE-BB29-0BFB5CD94B1F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3045AB18-A9FA-46AE-BB29-0BFB5CD94B1F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3045AB18-A9FA-46AE-BB29-0BFB5CD94B1F}.Release|Any CPU.Deploy.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

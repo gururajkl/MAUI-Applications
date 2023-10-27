@@ -1,6 +1,6 @@
 ﻿using UIKit;
 
-namespace Tasker
+namespace RESTInMAUI
 {
     public class Program
     {
