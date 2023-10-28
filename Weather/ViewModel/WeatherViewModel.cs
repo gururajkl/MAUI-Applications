@@ -11,7 +11,7 @@ namespace Weather.ViewModel
         private HttpClient client;
 
         public WeatherData WeatherData { get; set; }
-        public string PlaceName { get; set; } = "Enter City Name";
+        public string PlaceName { get; set; }
         public DateTime Date { get; set; } = DateTime.Now;
         public bool IsVisible { get; set; } = false;
         public bool IsLoading { get; set; }

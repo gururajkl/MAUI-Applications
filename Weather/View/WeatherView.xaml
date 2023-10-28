@@ -28,7 +28,7 @@
             <SearchBar
                 x:Name="searchbar"
                 HorizontalOptions="FillAndExpand"
-                Placeholder="Search City"
+                Placeholder="Search City, States, Countries..."
                 SearchCommand="{Binding SearchCommand}"
                 SearchCommandParameter="{Binding Source={x:Reference searchbar}, Path=Text}"
                 VerticalOptions="CenterAndExpand" />
