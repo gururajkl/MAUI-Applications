@@ -11,9 +11,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CollectionViewInMAUI", "Col
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Tasker", "Tasker\Tasker.csproj", "{564038F9-A2AE-4829-B78D-941CEC3E3E12}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RESTInMAUI", "RESTInMAUI\RESTInMAUI.csproj", "{3045AB18-A9FA-46AE-BB29-0BFB5CD94B1F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RESTInMAUI", "RESTInMAUI\RESTInMAUI.csproj", "{3045AB18-A9FA-46AE-BB29-0BFB5CD94B1F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Weather", "Weather\Weather.csproj", "{5146A27B-562B-4255-8A2D-6BEA1272C9D3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Weather", "Weather\Weather.csproj", "{5146A27B-562B-4255-8A2D-6BEA1272C9D3}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SQLITEDemo", "C:\Users\gjset\Downloads\SQLITEDemoMAUI-master\SQLITEDemoMAUI-master\SQLITEDemo\SQLITEDemo.csproj", "{058038A5-BD4C-4FD2-88B8-A90714319DF3}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -57,6 +59,12 @@ Global
 		{5146A27B-562B-4255-8A2D-6BEA1272C9D3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5146A27B-562B-4255-8A2D-6BEA1272C9D3}.Release|Any CPU.Build.0 = Release|Any CPU
 		{5146A27B-562B-4255-8A2D-6BEA1272C9D3}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{058038A5-BD4C-4FD2-88B8-A90714319DF3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{058038A5-BD4C-4FD2-88B8-A90714319DF3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{058038A5-BD4C-4FD2-88B8-A90714319DF3}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{058038A5-BD4C-4FD2-88B8-A90714319DF3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{058038A5-BD4C-4FD2-88B8-A90714319DF3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{058038A5-BD4C-4FD2-88B8-A90714319DF3}.Release|Any CPU.Deploy.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
