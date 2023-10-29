@@ -1,4 +1,6 @@
-﻿namespace Prosper
+﻿using Prosper.MVVM.Views;
+
+namespace Prosper
 {
     public partial class App : Application
     {
@@ -6,7 +8,7 @@
         {
             InitializeComponent();
 
-            MainPage = new AppShell();
+            MainPage = new StatisticsPage();
         }
     }
 }
