@@ -7,6 +7,7 @@ public partial class TransactionPage : ContentPage
     public TransactionPage()
     {
         InitializeComponent();
+        Application.Current.UserAppTheme = AppTheme.Light;
         BindingContext = new TransactionViewModel();
     }
 

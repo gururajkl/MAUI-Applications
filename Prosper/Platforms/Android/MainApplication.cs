@@ -1,5 +1,6 @@
 ﻿using Android.App;
 using Android.Runtime;
+using AndroidX.AppCompat.App;
 
 namespace Prosper
 {
@@ -9,6 +10,7 @@ namespace Prosper
         public MainApplication(IntPtr handle, JniHandleOwnership ownership)
             : base(handle, ownership)
         {
+            AppCompatDelegate.DefaultNightMode = AppCompatDelegate.ModeNightNo;
         }
 
         protected override MauiApp CreateMauiApp() => MauiProgram.CreateMauiApp();

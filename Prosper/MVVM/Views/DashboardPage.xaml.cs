@@ -7,6 +7,7 @@ public partial class DashboardPage : ContentPage
     public DashboardPage()
     {
         InitializeComponent();
+        Application.Current.UserAppTheme = AppTheme.Light;
         BindingContext = new DashboardViewModel();
     }
 
