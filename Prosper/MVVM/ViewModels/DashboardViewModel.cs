@@ -1,0 +1,43 @@
+﻿using PropertyChanged;
+using Prosper.MVVM.Models;
+using System.Collections.ObjectModel;
+
+namespace Prosper.MVVM.ViewModels
+{
+    [AddINotifyPropertyChangedInterface]
+    public class DashboardViewModel
+    {
+        public ObservableCollection<Transaction> Transactions { get; set; }
+        public decimal Balance { get; set; }
+        public decimal Income { get; set; }
+        public decimal Expenses { get; set; }
+
+        public DashboardViewModel()
+        {
+            FillData();
+        }
+
+        public void FillData()
+        {
+            var transactions = App.TransactionRepository.GetItems();
+            transactions = transactions.OrderByDescending(x => x.OperationDate).ToList();
+            Transactions = new(transactions);
+
+            Balance = 0; Income = 0; Expenses = 0;
+
+            foreach (var transaction in transactions)
+            {
+                if (transaction.IsIncome)
+                {
+                    Income += transaction.Amount;
+                }
+                else
+                {
+                    Expenses += transaction.Amount;
+                }
+            }
+
+            Balance = Income - Expenses;
+        }
+    }
+}

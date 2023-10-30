@@ -1,5 +1,7 @@
 ﻿using CommunityToolkit.Maui;
 using Microsoft.Extensions.Logging;
+using Prosper.MVVM.Models;
+using Prosper.Repositories;
 using Syncfusion.Maui.Core.Hosting;
 
 namespace Prosper
@@ -37,6 +39,7 @@ namespace Prosper
             #endif
             });
 
+            builder.Services.AddSingleton<BaseRepository<Transaction>>();
             return builder.Build();
         }
     }

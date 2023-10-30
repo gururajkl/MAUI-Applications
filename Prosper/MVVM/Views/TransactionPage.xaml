@@ -19,29 +19,37 @@
             <VerticalStackLayout Spacing="10" StyleClass="Padding25">
                 <Label Text="Transaction Name" />
                 <Frame StyleClass="FrameBorder">
-                    <Entry Text="Hotstar Subscription" />
+                    <Entry Text="{Binding Transaction.Name}" />
                 </Frame>
 
                 <Label StyleClass="Margin15" Text="Amount" />
                 <Frame StyleClass="FrameBorder">
                     <Entry
                         Keyboard="Numeric"
-                        Text="₹85"
+                        Text="{Binding Transaction.Amount}"
                         VerticalOptions="Center" />
                 </Frame>
 
                 <Label StyleClass="Margin15" Text="Transaction Date" />
                 <Frame StyleClass="FrameBorder">
-                    <DatePicker />
+                    <DatePicker Date="{Binding Transaction.TransactionDate}" />
                 </Frame>
 
                 <HorizontalStackLayout Margin="-10,0,0,0">
-                    <CheckBox IsChecked="True" VerticalOptions="Center" />
+                    <CheckBox IsChecked="{Binding Transaction.IsIncome}" VerticalOptions="Center" />
                     <Label Text="Is Income" VerticalOptions="Center" />
                 </HorizontalStackLayout>
 
-                <Button StyleClass="Margin15" Text="Save" />
-                <Button StyleClass="Margin15, RedControl" Text="Cancel" />
+                <Button
+                    x:Name="Save"
+                    Clicked="Save_Clicked"
+                    StyleClass="Margin15"
+                    Text="Save" />
+                <Button
+                    x:Name="Cancel"
+                    Clicked="Cancel_Clicked"
+                    StyleClass="Margin15, RedControl"
+                    Text="Cancel" />
             </VerticalStackLayout>
         </Grid>
     </Grid>
