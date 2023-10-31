@@ -5,11 +5,11 @@ namespace DevsPark.MVVM.Pages;
 
 public partial class AppShell : Shell
 {
-	public AppShell(PlacesViewModel vm)
-	{
-		InitializeComponent();
-		BindingContext = vm;
-	}
+    public AppShell(PlacesViewModel vm)
+    {
+        InitializeComponent();
+        BindingContext = vm;
+    }
 
     protected override void OnNavigated(ShellNavigatedEventArgs args)
     {

@@ -1,12 +1,7 @@
 ﻿using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
 using DevsPark.MVVM.Models;
-using System;
-using System.Collections.Generic;
 using System.Collections.ObjectModel;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace DevsPark.MVVM.ViewModels
 {
@@ -114,15 +109,54 @@ namespace DevsPark.MVVM.ViewModels
         [RelayCommand]
         public async Task OpenFlyout()
         {
-            Shell.Current.FlyoutIsPresented = true;                     
+            Shell.Current.FlyoutIsPresented = true;
         }
 
         [RelayCommand]
         public async Task ShowOffers()
         {
+
+            /* Unmerged change from project 'DevsPark (net7.0-android)'
+            Before:
+                        //await Shell.Current.GoToAsync("//frozenDrinks");
+
+
+                        //await Shell.Current.GoToAsync("offersView");
+            After:
+                        //await Shell.Current.GoToAsync("//frozenDrinks");
+
+
+                        //await Shell.Current.GoToAsync("offersView");
+            */
+
+            /* Unmerged change from project 'DevsPark (net7.0-maccatalyst)'
+            Before:
+                        //await Shell.Current.GoToAsync("//frozenDrinks");
+
+
+                        //await Shell.Current.GoToAsync("offersView");
+            After:
+                        //await Shell.Current.GoToAsync("//frozenDrinks");
+
+
+                        //await Shell.Current.GoToAsync("offersView");
+            */
+
+            /* Unmerged change from project 'DevsPark (net7.0-ios)'
+            Before:
+                        //await Shell.Current.GoToAsync("//frozenDrinks");
+
+
+                        //await Shell.Current.GoToAsync("offersView");
+            After:
+                        //await Shell.Current.GoToAsync("//frozenDrinks");
+
+
+                        //await Shell.Current.GoToAsync("offersView");
+            */
             //await Shell.Current.GoToAsync("//frozenDrinks");
 
-            
+
             //await Shell.Current.GoToAsync("offersView");
 
             //await Shell.Current.GoToAsync("//iceCream");
@@ -139,7 +173,7 @@ namespace DevsPark.MVVM.ViewModels
         public async Task Search()
         {
             await Shell.Current.GoToAsync("//search");
-           //searchView
+            //searchView
         }
     }
 }
