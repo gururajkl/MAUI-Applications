@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="DalUi.Views.GenerationOptionView"
+             Title="GenerationOptionView"
+             BackgroundColor="#101216">
+
+    <Grid Margin="25, 25, 0, 0"
+          RowDefinitions=".2*, .1*, .1*, .3*, .2*, .1*">
+        <VerticalStackLayout VerticalOptions="Center">
+            <Label Text="Select Options"
+                   FontFamily="NexaHeavy"
+                   FontSize="30"
+                   TextColor="White" />
+            <Label Text="Minimum of 6 options"
+                   Margin="0, 10, 0, 0"
+                   FontSize="20"
+                   TextColor="#ACB1BB" />
+        </VerticalStackLayout>
+
+        <CollectionView Grid.Row="1"
+                        ItemsSource="{Binding Options}">
+            <CollectionView.ItemsLayout>
+                <LinearItemsLayout ItemSpacing="10"
+                                   Orientation="Horizontal" />
+            </CollectionView.ItemsLayout>
+
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <Grid HeightRequest="50"
+                          WidthRequest="50">
+                        <RoundRectangle CornerRadius="35"
+                                        Fill="#242529" />
+                        <Label Text="{Binding}"
+                               TextColor="White"
+                               VerticalOptions="Center" />
+                    </Grid>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+
+        <Label Grid.Row="2"
+               Text="Choose a style of picture"
+               FontFamily="NexaHeavy"
+               TextColor="White"
+               VerticalOptions="Center" />
+    </Grid>
+</ContentPage>
